@@ -15,5 +15,7 @@ npm test
 3. Run
 
 ```
-npm start ./src/__fixtures__/rules.json ./src/__fixtures__/hands.txt
+npm start rules.json hands.txt
 ```
+
+You can find sample files in `./src/__fixtures__/`
