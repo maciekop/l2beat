@@ -6,7 +6,7 @@ export class CardGame {
   constructor(private readonly handMatcher: HandMatcher) {}
 
   public play(rules: Rule[], hands: Hand[]): Result[] {
-    // sort rules by score to match starting form the highest
+    // sort rules by score to match starting from the highest
     rules.sort((a, b) => b.score - a.score);
 
     return hands.reduce((acc: Result[], hand: Hand) => {

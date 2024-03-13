@@ -51,14 +51,14 @@ describe('utils', () => {
         "5 5 5": 5
       }`;
 
+      jest.spyOn(fs, 'readFileSync').mockReturnValue(mockRules);
+
       const expectedResult = [
         { pattern: ['x', 'x', 'x', 'y', 'y'], score: 20 },
         { pattern: ['x', 'x', 'x'], score: 10 },
         { pattern: ['A', 'x', 'x'], score: 7 },
         { pattern: ['5', '5', '5'], score: 5 }
       ] as Rule[];
-
-      jest.spyOn(fs, 'readFileSync').mockReturnValue(mockRules);
 
       const result = loadRules('rules.json');
 

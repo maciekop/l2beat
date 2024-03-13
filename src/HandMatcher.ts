@@ -10,10 +10,10 @@ export class HandMatcher {
 
     // split pattern into cards and variables
     const patternCards = new Map<Rank, number>();
-    const patternVariables = new Map<Card, number>();
+    const patternVariables = new Map<Variable, number>();
     patternMap.forEach((value, key) =>
       VARS.includes(key)
-        ? patternVariables.set(key, value)
+        ? patternVariables.set(key as Variable, value)
         : patternCards.set(key as Rank, value)
     );
 
